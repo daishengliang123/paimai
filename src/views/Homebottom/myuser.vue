@@ -110,11 +110,12 @@
       </div>
     </div>
 
+
+     <!-- banner轮播图 -->
+      <my-banner v-show="show1"></my-banner>
+
     <!-- 控制我的拍卖页面的显示和影藏 -->
     <div class="mypaimai" v-show="show1">
-
-      <!-- banner轮播图 -->
-      <my-banner></my-banner>
 
       <!-- 控制不叫尾款页面的显示与隐藏 -->
       <div v-if="show" class="weikuan">
@@ -266,6 +267,9 @@
 // @ is an alias to /src
 import mybanner from "@/views/Homebottom/mybanner.vue";
 import mycountdown from "@/views/Homebottom/mycountdown.vue";
+
+
+import { getUserlist} from '@/API/api.js'
 export default {
   name: "XXX",
   data() {
@@ -389,7 +393,16 @@ export default {
       ]
     };
   },
+  created() {
+    this.getuserlist()
+   
+  },
   methods: {
+    getuserlist(){
+     getUserlist('/common/userAucInfo').then(data=>{
+         console.log(data)
+     })
+    },
     shouye() {
       this.show = true;
       this.hidden = false;
