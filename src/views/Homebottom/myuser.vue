@@ -3,9 +3,7 @@
     <!-- user -->
     <div class="user">
       <div class="left">
-        <span>联众游戏</span>
-        |
-        <span>竞拍中心</span>
+        <img src="../../assets/img/1.jpg" alt="">
       </div>
       <div class="right">
         <span @click="shouye()">首页</span>
@@ -110,13 +108,11 @@
       </div>
     </div>
 
-
-     <!-- banner轮播图 -->
-      <my-banner v-show="show1"></my-banner>
+    <!-- banner轮播图 -->
+    <my-banner v-show="show1"></my-banner>
 
     <!-- 控制我的拍卖页面的显示和影藏 -->
     <div class="mypaimai" v-show="show1">
-
       <!-- 控制不叫尾款页面的显示与隐藏 -->
       <div v-if="show" class="weikuan">
         <!-- 竞拍次数  auctions -->
@@ -139,7 +135,7 @@
         <div class="list">
           <ul>
             <li v-for="(item,index) in listData" :key="index" @click="myauctions()">
-              <div>正在竞拍</div>
+              <div><img src="../../assets/img/22.jpg" alt=""></div>
               <div class="imgbox">
                 <img src="../../assets/img/3.jpg" alt />
               </div>
@@ -187,77 +183,78 @@
           ></el-pagination>
         </div>
       </div>
-
     </div>
 
-     <!-- repy 补交尾款 -->
-      <div class="repy" v-show="hidden">
-        <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick">
-          <el-tab-pane label="补交尾款" name="first">
-            <el-table :data="repyData" style="width: 100%">
-              <el-table-column prop="name" label="物品名称" width="180"></el-table-column>
+    <!-- repy 补交尾款 -->
+    <div class="repy" v-show="hidden">
+      <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick">
+        <el-tab-pane label="补交尾款" name="first">
+          <el-table :data="repyData" style="width: 100%">
+            <el-table-column prop="name" label="物品名称" width="180"></el-table-column>
 
-              <el-table-column prop="article" label="物品ID"></el-table-column>
+            <el-table-column prop="article" label="物品ID"></el-table-column>
 
-              <el-table-column prop="date" label="竞拍时间"></el-table-column>
+            <el-table-column prop="date" label="竞拍时间"></el-table-column>
 
-              <el-table-column prop="bail" label="保证金"></el-table-column>
+            <el-table-column prop="bail" label="保证金"></el-table-column>
 
-              <el-table-column prop="Effectiveness" label="成效金额"></el-table-column>
+            <el-table-column prop="Effectiveness" label="成效金额"></el-table-column>
 
-              <el-table-column prop="needprice" label="需要补款金额"></el-table-column>
+            <el-table-column prop="needprice" label="需要补款金额"></el-table-column>
 
-              <el-table-column prop="enddate" label="补款结束日期"></el-table-column>
+            <el-table-column prop="enddate" label="补款结束日期"></el-table-column>
 
-              <el-table-column label="操作">
-                <template slot-scope="scope">
-                  <el-button size="mini" type="danger" @click="dialogVisible = true">确认补款</el-button>
-                </template>
-              </el-table-column>
-            </el-table>
-          </el-tab-pane>
-          <el-tab-pane label="我的拍卖" name="second">
-            <el-table :data="myauctionData" style="width: 100%">
-              <el-table-column prop="name" label="物品名称" width="180"></el-table-column>
-              <el-table-column prop="article" label="物品ID" width="180"></el-table-column>
-              <el-table-column prop="date" label="竞拍时间"></el-table-column>
-              <el-table-column prop="yiprice" label="已付价格"></el-table-column>
-              <el-table-column prop="weiprice" label="未付价格"></el-table-column>
-              <el-table-column prop="totalprice" label="总价价格"></el-table-column>
-              <el-table-column prop="iszhong" label="是否中标"></el-table-column>
-              <el-table-column prop="state" label="状态"></el-table-column>
-            </el-table>
-          </el-tab-pane>
-          <el-tab-pane label="我的领取" name="third">
-            <el-table :data="mydrawData" style="width: 100%">
-              <el-table-column prop="name" label="物品名称" width="180"></el-table-column>
-              <el-table-column prop="article" label="物品ID" width="180"></el-table-column>
-              <el-table-column prop="date" label="竞拍时间"></el-table-column>
-              <el-table-column prop="bail" label="保证金"></el-table-column>
-              <el-table-column prop=" Transactionprice" label="成交金额"></el-table-column>
-              <el-table-column prop="repyprice" label="补款金额"></el-table-column>
-              <el-table-column prop="repytime" label="补款时间"></el-table-column>
-              <el-table-column prop="sure" label="领取确认"></el-table-column>
-              <el-table-column prop="state" label="状态"></el-table-column>
-            </el-table>
-          </el-tab-pane>
-        </el-tabs>
-      </div>
-
+            <el-table-column label="操作">
+              <template slot-scope="scope">
+                <el-button size="mini" type="danger" @click="dialogVisible = true">确认补款</el-button>
+              </template>
+            </el-table-column>
+          </el-table>
+        </el-tab-pane>
+        <el-tab-pane label="我的拍卖" name="second">
+          <el-table :data="myauctionData" style="width: 100%">
+            <el-table-column prop="name" label="物品名称" width="180"></el-table-column>
+            <el-table-column prop="article" label="物品ID" width="180"></el-table-column>
+            <el-table-column prop="date" label="竞拍时间"></el-table-column>
+            <el-table-column prop="yiprice" label="已付价格"></el-table-column>
+            <el-table-column prop="weiprice" label="未付价格"></el-table-column>
+            <el-table-column prop="totalprice" label="总价价格"></el-table-column>
+            <el-table-column prop="iszhong" label="是否中标"></el-table-column>
+            <el-table-column prop="state" label="状态"></el-table-column>
+          </el-table>
+        </el-tab-pane>
+        <el-tab-pane label="我的领取" name="third">
+          <el-table :data="mydrawData" style="width: 100%">
+            <el-table-column prop="name" label="物品名称" width="180"></el-table-column>
+            <el-table-column prop="article" label="物品ID" width="180"></el-table-column>
+            <el-table-column prop="date" label="竞拍时间"></el-table-column>
+            <el-table-column prop="bail" label="保证金"></el-table-column>
+            <el-table-column prop=" Transactionprice" label="成交金额"></el-table-column>
+            <el-table-column prop="repyprice" label="补款金额"></el-table-column>
+            <el-table-column prop="repytime" label="补款时间"></el-table-column>
+            <el-table-column prop="sure" label="领取确认"></el-table-column>
+            <el-table-column prop="state" label="状态"></el-table-column>
+          </el-table>
+        </el-tab-pane>
+      </el-tabs>
+    </div>
 
     <!-- dialog  弹出框 -->
     <div class="dialog">
-      <el-dialog title="确认补款" :visible.sync="dialogVisible" width="30%" :modal="false">
-        <div>当前联众币不足</div>
-        <div>需要购买联众币后确认补款</div>
+      <el-dialog
+        title="确认补款"
+        :visible.sync="dialogVisible"
+        width="30%"
+        :modal="false"
+        :before-close="handleClose"
+      >
         <div>
-          补交联众币
-          <a href>999999</a>
-          需要支付
+          本次补款需要支付
           <a href>999999</a>
         </div>
         <span slot="footer" class="dialog-footer">
-          <el-button type="danger" @click="pay">去支付</el-button>
+          <el-button type="primary" @click="open">确 定</el-button>
+          <el-button @click="dialogVisible = false">在考虑下</el-button>
         </span>
       </el-dialog>
     </div>
@@ -268,10 +265,9 @@
 import mybanner from "@/views/Homebottom/mybanner.vue";
 import mycountdown from "@/views/Homebottom/mycountdown.vue";
 
-
-import { getUserlist} from '@/API/api.js'
+import { getUserlist } from "@/API/api.js";
 export default {
-  name: "XXX",
+  name: "myuser",
   data() {
     return {
       show: true, //
@@ -394,15 +390,14 @@ export default {
     };
   },
   created() {
-    this.getuserlist()
-   
+    // this.getuserlist();
   },
   methods: {
-    getuserlist(){
-     getUserlist('/common/userAucInfo').then(data=>{
-         console.log(data)
-     })
-    },
+    // getuserlist() {
+    //   getUserlist("/common/userAucInfo").then(data => {
+    //     console.log(data);
+    //   });
+    // },
     shouye() {
       this.show = true;
       this.hidden = false;
@@ -433,14 +428,27 @@ export default {
     handleChange(value) {
       console.log(value);
     },
-    pay() {
-      this.dialogVisible = false;
-      this.$router.push("/paymoney");
+    open() {
+      this.$confirm("是否确认, ", "你确认吗", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning"
+      }).then(() => {
+        this.dialogVisible = false;
+        this.$router.push("/paymoney");
+      });
+    },
+    handleClose(done) {
+      this.$confirm("确认关闭？")
+        .then(_ => {
+          done();
+        })
+        .catch(_ => {});
     }
   },
   components: {
     "my-banner": mybanner,
-    "my-countdown":mycountdown,
+    "my-countdown": mycountdown
   }
 };
 </script>
@@ -455,8 +463,11 @@ export default {
   justify-content: space-around;
   .left {
     height: 100%;
-    font-size: 16px;
-    font-weight: normal;
+    width: 170px;
+    >img{
+      width: 100%;
+      height: 100%;
+    }
   }
   .right {
     height: 100%;
@@ -524,7 +535,7 @@ export default {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        li {
+        >li {
           margin-top: 15px;
           width: 210px;
           height: 250px;
@@ -532,7 +543,10 @@ export default {
           > div:nth-child(1) {
             box-sizing: border-box;
             width: 60px;
-            background: red;
+           >img{
+             width: 100%;
+             height: 100%;
+           }
           }
           > .imgbox {
             box-sizing: border-box;
@@ -600,13 +614,32 @@ export default {
       height: 20px;
       width: 100%;
       text-align: center;
+      .el-pagination.is-background .el-pager li:not(.disabled).active {
+        background-color: red;
+        color: #fff;
+      }
+
+      .el-pagination.is-background .el-pager li {
+        margin: 0 5px;
+        background-color: #fff;
+        color: #606266;
+        min-width: 30px;
+        border-radius: 2px;
+      }
+
+      .el-pagination.is-background .btn-prev{
+         background-color: #fff;
+      }
+      .el-pagination.is-background .btn-next{
+         background-color: #fff;
+      }
     }
   }
 }
 
 .repy {
   width: 100vw;
-  
+
   margin-top: 20px;
   > .el-tabs--border-card {
     border: none;

@@ -2,14 +2,20 @@
   <!-- online 在线充值页面 -->
   <div class="online">
     <div>
-      <span class="el-icon-user"></span>
+     <a href="http://csc.ourgame.com/">
+        <span class="el-icon-user"></span>
       在线提问
+     </a>
     </div>
     <div>
-      <span class="el-icon-user"></span>在线充值
+     <a href="http://newpay.ourgame.com/">
+        <span class="el-icon-user"></span>在线充值
+     </a>
     </div>
     <div>
-      <span class="el-icon-house"></span>联众论坛
+     <a href="http://bbs.lianzhong.com/">
+        <span class="el-icon-house"></span>联众论坛
+     </a>
     </div>
   </div>
 </template>
@@ -39,11 +45,16 @@ export default {
       border: 1px solid #ccc;
       text-align: center;
       font-weight: 600;
-      > span {
+     a{ 
+       font-size: 15px;
+       font-weight: 600;
+       color: #000;
+        span {
         color: red;
         padding-right: 2px;
         font-size: 15px;
       }
+     }
     }
   }
 </style>
